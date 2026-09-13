@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block title %}Swaps — REMIX{% endblock %}
+
+{% block content %}
+
+<section class="collection-hero">
+  <div class="container">
+    <div class="collection-hero-inner">
+      <p class="breadcrumb"><a href="/">Home</a> / Swaps</p>
+      <h1>Build Your Bundle</h1>
+      <p class="lede">Collectible art panels from independent artists around the world. Mix, match, and swap them across any REMIX base.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="container">
+
+    <div class="catalogue-toolbar">
+      <div class="chip-row" data-swaps-filters></div>
+      <div style="display:flex; align-items:center; gap:1rem;">
+        <span class="result-count" data-swaps-count></span>
+        <select class="select-sort" data-swaps-sort aria-label="Sort swaps">
+          <option value="newest">Newest</option>
+          <option value="popular">Most Popular</option>
+          <option value="price-asc">Price: Low to High</option>
+          <option value="price-desc">Price: High to Low</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="product-grid" data-swaps-grid></div>
+
+    <div class="load-more-wrap">
+      <button class="btn btn-outline" data-swaps-more>Load More Panels</button>
+      <p class="load-status" data-swaps-status></p>
+    </div>
+
+  </div>
+</section>
+
+<section class="section section-alt section-tight">
+  <div class="container split reverse">
+    <div class="split-media">Photo placeholder<br>(panel detail shots)</div>
+    <div>
+      <p class="eyebrow">Art by humans</p>
+      <h2>Every Panel Supports An Artist</h2>
+      <p class="lede">Each design is original, human-made artwork. A portion of every sale goes directly to the artist behind it.</p>
+      <a href="#" class="btn btn-primary">Meet The Artists</a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="{{ url_for('static', filename='js/catalogue.js') }}"></script>
+{% endblock %}
